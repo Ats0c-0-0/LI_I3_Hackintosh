@@ -1,110 +1,77 @@
-# EFI of Lenovo Ideapad 3i 15IML05 (i3-10110U) for macOS monterey, ventura and sonoma
+# EFI LI-I3 (Sonoma até agora) 
 
-![only banner](https://github.com/Ats0c/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI/blob/main/Images/Banner.png)
+![only banner](/Images/Banner.png)
 
-## **<br/>Remembering that the intention is to help and not steal someone else’s project!! [All credits go to the original author](https://www.olarila.com/topic/19326-efi-lenovo-ideapad-3i-15iml05-82bs0001br/)[^1].<br>**
+**EFI foi refeita do zero para maior compatibilidade com o notebook**
 
-### <br/>This configuration was adapted for the Lenovo Ideapad 3I with the i3-10100U processor so that some things work well.<br>
-Opencore was updated to 1.0.0 and all kexts too
+### Essa EFI foi feita com ajuda de Deus, muito ChatGPT e OP-Core Simplify.
 
-### <br/>It is now possible to update to macOS ventura and sonoma!!<br>
-kext from Airportitlwm has been updated for each version of macOS
-
-> [!IMPORTANT]
-> Just pay attention to one detail, which is to update to Sonoma. Go to Misc > Security > SecureBootModel and leave it disabled, it's the only way to update to Mac OS Sonona.
-
-> [!WARNING]
-> Because SecureBootModel is disabled, you will be greeted with a black screen after upgrading to Sonoma. So, I recommend you have a Dualboot to help with this problem.
-
-### <br/>Things that work with the original author's default configuration:<br>
+### <br/>O que funciona?:<br>
 
   - *Webcam (Lenovo UVC Camera)*
   - *Touchpad (ELAN I2C)*
   - *HDMI (Audio + Video)*
   - *Brightness Control (F11/F12 Keys)*
-
-### <br/>Things that work in my setup:<br>
-
-  - *CPU (Intel Core i3-10110U)*
-  - *Audio (Realtek ALC257)*
-  - *USB (Comet Lake PCH-LP USB 3.1)*
-  - *Sleep*
+  - *Entrada de cartão de memória (não me pergunte como)*
+  - *GPU com aceleração gráfica*
+  - *WiFi/Bluetooth Intel AC9560*
+  - *Repouso/Sleep funcionando (mas com um porém)*"
+  - *Thermals*
+  - *Sensores*
 <br><br/>
  
-*CPU (Intel Core i3-10110U)*
-> *Now power management works perfectly, even allowing the user to see the CPU temperature and also having low power consumption*
+### Sobre o hackin...
+Compensa usar ele em um IdeaPad com I3? não, mas vai do querer de cada um testar. Na minha opnião, o sistema ficou bom e claro que fica melhor ainda se deixar ele parado iniciando as coisas (parece carro velho), mas não entrega aquilo que ele pode como no Windows _(não me refiro ao 11 e sim ao 10)_.
+É bom esperimentar coisas novas como o macOS que é um sistema que não está no alcance de muitos brasileiros pelo fato de um MacBook custar um rim e mais um pouco.
 
-*Audio (Realtek ALC257)*
-> *Only the layout-id was corrected*
+### Lembra quando falei que o Repouso/Sleep funcionava mas tinha um porém? então...
+pelo que testei o sleep funciona, mas tem horas que não e eu ainda não captei esse problema **AINDA**, mas adianto que nem deve correção mesmo pra isso, sempre fica nisso.
+Enfim, para funcionar o sleep tem que colocar esse pequeno comando no seu terminal :)
 
-*USB (Comet Lake PCH-LP USB 3.1)*
-> *It worked in the default configuration, however, it caused problems with sleep*
-
-*Sleep*
-> *Now works perfectly*
-
-### <br/>You must put this command to make sleep work<br>
-> ### ![Just to help user to configure sleep](https://github.com/Ats0c/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI/blob/main/Images/Sleep_config.png)
+`sudo pmset -a hibernatemode 25 proximitywake 0 powernap 0 displaysleep 0 halfdim 0 tcpkeepalive 0 ttykeepawake 0´`
 
 > [!IMPORTANT]
-> It is recommended that you reset NVRAM only once after configuring sleep.
+> É de extrema importãncia você dar aquele Reset NVRAM depois de aplicar esse comando
 
-### <br/>ACPI patches I made:<br>
- - *SSDT-DATA (Working together from kext CPUFriendFriend)*
- - *SSDT-USBX*
- - *SSDT-RHUB (Just redone to avoid hardware problems)*
- - *SSDT-AWAC*
- - *SSDT-HPET*
- - *SSDT-UIAC*
- - *SSDT-RTCAWAC*
+### <br/>SSDTs feitas no OP-Core (créditos ao cara)<br>
+  - SSDT-ALS0
+  - SSDT-EC
+  - SSDT-GPI0
+  - SSDT-MCHC
+  - SSDT-PLUG
+  - SSDT-PNLF
+  - SSDT-RTCAWAC
+  - SSDT-SBUS
+  - SSDT-USB-Reset
+  - SSDT-USBX
+  - SSDT-XOSI
 
-## <br/>Which SMBios should I use?<br>
-Use MacBookPro13.1 SMBios
-> [!NOTE]
-> you can use others, but I don't guarantee that sleep will work.
-
-## <br/>Ways to install macOS:<br>
-1. **Using the image available on Olarila.com**
-   - Go to [olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/) and download the macOS monterey image
-   - Flash the image onto a PenDrive of at least 16GB using [Balena Etcher](https://etcher.balena.io/)
-   - When the flash is finished, restart and boot from the PenDrive
-   - Go to disk utility and format the storage you are going to use into "APFS" and "GUID Partition Map" and start the system installation
-  
-2. **Using MacRecovery**
-   - Go to [macrecovery](https://github.com/luchina-gabriel/macrecovery) repository and download lastest release and unzip
-   - Go to the unzipped folder, open the terminal and run this code here
-     ```
-     python3 ./macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000000000 download
-     ```
-   - Create a folder named com.apple.recovery.boot and copy the new files into this folder
-   - Now format the PenDrive in FAT32 and copy the EFI and the folder you created to the root
-   - When finished, restart and boot from the PenDrive
-   - Go to disk utility and format the storage you are going to use into "APFS" and "GUID Partition Map" and start the system installation
-  
-## <br/>Generate your SMBios<br>
-1. Using OCAT
-  - Search Plataform Info (or PI) and generate new SMBios on SystemProductName![Search Plataform Info (or PI) and generate new SMBios](https://github.com/Ats0c/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI/blob/main/Images/SMBios.png)
-2. Using GenSMBios
-  - Watch these tutorials to find out how to do it (I don't know how to do this lol)
-    - [In English](https://www.youtube.com/watch?v=dovJUlKgS5E)
-    - [In Portuguese](https://www.youtube.com/watch?v=YT8nFStOPW0)
-
-## <br/>What to disable in BIOS?<br>
-- All configs about PXE
+## <br/>O que deve ser desativado na BIOS?<br>
+- Todas as configs sobre PXE
 - Secure Boot
 - Intel SGX
 - Flip to boot
 
-> [!IMPORTANT]
-> Set the boot mode to UEFI if not.
+## <br/>Maneiras de você criar um bootável do macOS:<br>
+1. **Maneira rápida, prática e offline**
+   - No site **[olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/)** é disponibilizado algumas imagens de instalação de várias versões do macOS e você vai baixar qualquer versão do macOS Sonoma
+   - Faça o flash usando o **[Balena Etcher](https://etcher.balena.io)** ou **[Rufus](https://rufus.ie/pt_BR/)**(lembrando que pelo balena é bem mais demorado)
+   - Quando finalizado é só configurar a BIOS e iniciar o pelo PenDrive.
+  
+2. **Maneira mais fácil, mas precisa de internet no instalador**
+   - Baixe o **[macrecovery](https://github.com/luchina-gabriel/macrecovery)** e descompacte o zipado
+   - Dentro da pasta, execute esse código `python3 ./macrecovery.py -b Mac-226CB3C6A851A671 -m 00000000000000000 download`
+   - Formate o seu PenDrive em FAT32 (lembrando que deve se usar um PenDrive de 32GB) e crie a pasta `com.apple.recovery.boot`, mova os arquivos baixados para essa pasta e a EFI para a raiz do PenDrive e pronto, você tem um instalador legacy original em seu PenDrive.
+  
+## <br/>Gerando um novo SMBios<br>
+No meu ponto de vista não tem app melhor pra fazer isso do que o **[OCAT (OCAuxiliaryTools)](https://github.com/ic005k/OCAuxiliaryTools/releases)** e aqui vou te ensinar como você vai gerar as novas informações.
 
-## What tool did you use to modify the EFI?
-Just good old [OCAT (OCAuxiliaryTools)](https://github.com/ic005k/OCAuxiliaryTools/releases)
+Abra o app e clique no 3º icone da direita para esquerda, monte sua EFI que está no PenDrive, vá em PI que está na barra lateral com um icone de iMac e clique no botão generate de SystemProductName (não se esqueça de checar se o SystemSerialNumber é real, lembre-se que ele não deve ser)
 
-## <br/>About MacOS update issues (ventura, sonoma and future updates)<br>
-I don't think you necessarily need the latest version of the OS because we have rather weak and precarious hardware (yes, this notebook is bad). So I think it would be better if you used older versions of macOS (like Mojave, Catalina and BigSur) more for fluidity and also because it ensures that things like sleep work perfectly, versions like Ventura and Sonoma have a lot of suspension problems and even USB being unmapped completely out of nowhere. This is my opinion, you have every right to disagree with me.
+>[!CAUTION]
+> e pelo amor de Deus, não mude a SMBios atoa porque isso vai quebrar as configurações das portas USB
 
-## Thanks
-I wanted to thank everyone who helps keep Hackintosh alive and a special thank you to [OzemirElion](https://www.olarila.com/profile/67412-ozemirelion/), creator of the original EFI
-
-[^1]: the entire EFI base was redone for this processor.
+### Agradecimentos
+  - Primeiramente a Deus por não ter feito eu desistir e me jogar na frente do caminhão
+  - Ao ChatGPT que ajudou demais com explicações e pesquisas
+  - E ao OP-Core Simplify que ajudou a criar as SSDT

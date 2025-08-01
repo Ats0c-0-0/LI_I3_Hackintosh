@@ -28,7 +28,7 @@ Compensa usar ele em um IdeaPad com I3? não, mas vai do querer de cada um testa
 pelo que testei o sleep funciona, mas tem horas que não e eu ainda não captei esse problema **AINDA**, mas adianto que nem deve correção mesmo pra isso, sempre fica nisso.
 Enfim, para funcionar o sleep tem que colocar esse pequeno comando no seu terminal :)
 
-`sudo pmset -a hibernatemode 25 proximitywake 0 powernap 0 displaysleep 0 halfdim 0 tcpkeepalive 0 ttykeepawake 0´`
+`sudo pmset hibernatemode 0 womp 0 sleep 0 ttyskeepawake 0 && sudo pmset displaysleep 0 halfdim 0 tcpkeepalive 0`
 
 > [!IMPORTANT]
 > É de extrema importãncia você dar aquele Reset NVRAM depois de aplicar esse comando

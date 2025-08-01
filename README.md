@@ -2,41 +2,40 @@
 
 ![only banner](/Images/Banner.png)
 
-### Essa EFI foi feita com ajuda de Deus, muito ChatGPT e OP-Core Simplify.
+**Essa EFI foi feita com ajuda de Deus, muito ChatGPT e OP-Core Simplify.**
 
-**EFI foi refeita do zero para maior compatibilidade com o notebook**
-
-## <br/>O que funciona?:<br>
+## O que funciona?:
 
   - *Webcam (Lenovo UVC Camera)*
   - *Touchpad (ELAN I2C)*
   - *HDMI (Audio + Video)*
   - *Brightness Control (F11/F12 Keys)*
+  - *Áudio (mas com alguns problemas, mas sem necessidade de patch's)* 
   - *Entrada de cartão de memória (não me pergunte como)*
   - *GPU com aceleração gráfica*
   - *WiFi/Bluetooth Intel AC9560*
   - *Repouso/Sleep funcionando (mas com um porém)*"
+  - *Boot com Windows 10/11 pelo OpenCore*
   - *Thermals*
   - *Sensores*
-<br><br/>
  
 ## Sobre o hackin...
 Compensa usar ele em um IdeaPad com I3? não, mas vai do querer de cada um testar. Na minha opnião, o sistema ficou bom e claro que fica melhor ainda se deixar ele parado iniciando as coisas (parece carro velho), mas não entrega aquilo que ele pode como no Windows _(não me refiro ao 11 e sim ao 10)_.
 É bom esperimentar coisas novas como o macOS que é um sistema que não está no alcance de muitos brasileiros pelo fato de um MacBook custar um rim e mais um pouco.
 
 ## Lembra quando falei que o Repouso/Sleep funcionava mas tinha um porém? então...
-Pelo que testei o sleep funciona, mas tem horas que não e eu ainda não captei esse problema **AINDA**, mas adianto que nem deve correção mesmo pra isso, sempre fica nisso.
+Pelo que testei o sleep funciona, mas tem horas que não e eu não captei esse problema **AINDA**, mas adianto que nem deve correção mesmo pra isso, sempre fica nisso.
 Enfim, para funcionar o sleep tem que colocar esse pequeno comando no seu terminal :)
 
 `sudo pmset hibernatemode 25 womp 0 sleep 1 ttyskeepawake 1 && sudo pmset displaysleep 0 halfdim 0 tcpkeepalive 1 standby 1 powernap 1`
 
 ### Atualização sobre Sleep/Repouso (01/08/25)
-Feito alguns testes e agora funciona bem até com esse novo comando
+Feito alguns testes e agora funciona bem até com esse novo comando acima
 
 > [!IMPORTANT]
 > É de extrema importãncia você dar aquele Reset NVRAM depois de aplicar esse comando
 
-## <br/>SSDTs feitas no OP-Core (créditos ao cara)<br>
+## SSDTs feitas no OP-Core (créditos ao cara)
   - SSDT-ALS0
   - SSDT-EC
   - SSDT-GPI0
@@ -49,13 +48,13 @@ Feito alguns testes e agora funciona bem até com esse novo comando
   - SSDT-USBX
   - SSDT-XOSI
 
-## <br/>O que deve ser desativado na BIOS?<br>
+## O que deve ser desativado na BIOS?
 - Todas as configs sobre PXE
 - Secure Boot
 - Intel SGX
 - Flip to boot
 
-# <br/>Maneiras de você criar um bootável do macOS:<br>
+# Maneiras de você criar um bootável do macOS:
 1. **Maneira rápida, prática e offline**
    - No site **[olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/)** é disponibilizado algumas imagens de instalação de várias versões do macOS e você vai baixar qualquer versão do macOS Sonoma
    - Faça o flash usando o **[Balena Etcher](https://etcher.balena.io)** ou **[Rufus](https://rufus.ie/pt_BR/)**(lembrando que pelo balena é bem mais demorado)
@@ -69,7 +68,7 @@ Feito alguns testes e agora funciona bem até com esse novo comando
 >[!NOTE]
 >Independente do metodo que for usar você vai precisar de um PenDrive com bastante espaço 
   
-## <br/>Gerando um novo SMBios<br>
+## Gerando um novo SMBios
 No meu ponto de vista não tem app melhor pra fazer isso do que o **[OCAT (OCAuxiliaryTools)](https://github.com/ic005k/OCAuxiliaryTools/releases)** e aqui vou te ensinar como você vai gerar as novas informações.
 
 Abra o app e clique no 3º icone da direita para esquerda, monte sua EFI que está no PenDrive, vá em PI que está na barra lateral com um icone de iMac e clique no botão generate de SystemProductName (não se esqueça de checar se o SystemSerialNumber é real, lembre-se que ele não deve ser)

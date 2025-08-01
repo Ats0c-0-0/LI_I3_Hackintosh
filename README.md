@@ -66,7 +66,7 @@ Feito alguns testes e agora funciona bem até com esse novo comando
    - Dentro da pasta, execute esse código `python3 ./macrecovery.py -b Mac-226CB3C6A851A671 -m 00000000000000000 download`
    - Formate o seu PenDrive em FAT32 e crie a pasta `com.apple.recovery.boot`, mova os arquivos baixados para essa pasta e a EFI para a raiz do PenDrive e pronto, você tem um instalador legacy original em seu PenDrive.
 
->[!NOTES]
+>[!NOTE]
 >Independente do metodo que for usar você vai precisar de um PenDrive com bastante espaço 
   
 ## <br/>Gerando um novo SMBios<br>

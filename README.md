@@ -87,6 +87,8 @@ Abra o app e clique no 3º icone da direita para esquerda, monte sua EFI que est
 
 - Antes o `alcid=11`funcionava bem, mas devido atualizações do AppleALC acabou perdendo o suporte a entrada AUX e única id que funciona hoje em dia é a `alcid=100`
 
+- Deve se usar HeliPort e ativar a kext Itwlm e desativar o Airportitwlm para poder ter acesso a internet do Sequoia em diante
+
 ### Q&A
 - Posso usar o meu CPUFriendFriend?
   - Sim e deve

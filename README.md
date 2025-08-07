@@ -2,8 +2,6 @@
 
 ![only banner](/Images/Banner.png)
 
-**Essa EFI foi feita com ajuda de Deus, muito ChatGPT e OP-Core Simplify.**
-
 Indo direto ao ponto:
 - [O que funciona?](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI#o-que-funciona)
   - [Sobre o hackin...](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#sobre-o-hackin)
@@ -34,7 +32,7 @@ Indo direto ao ponto:
  
 ## Sobre o hackin...
 Compensa usar ele em um IdeaPad com I3? não, mas vai do querer de cada um testar. Na minha opnião, o sistema ficou bom e claro que fica melhor ainda se deixar ele parado iniciando as coisas (parece carro velho), mas não entrega aquilo que ele pode como no Windows _(não me refiro ao 11 e sim ao 10)_.
-É bom esperimentar coisas novas como o macOS que é um sistema que não está no alcance de muitos brasileiros pelo fato de um MacBook custar um rim e mais um pouco.
+É bom experimentar coisas novas como o macOS que é um sistema que não está no alcance de muitos brasileiros pelo fato de um MacBook custar um rim e mais um pouco.
 
 ## Lembra quando falei que o Repouso/Sleep funcionava mas tinha um porém? então...
 Pelo que testei o sleep funciona, mas tem horas que não e eu não captei esse problema **AINDA**, mas adianto que nem deve correção mesmo pra isso, sempre fica nisso.
@@ -65,15 +63,15 @@ Enfim, para funcionar o sleep tem que colocar esse comando no seu terminal :)
 - Flip to boot
 
 # Maneiras de você criar um bootável do macOS:
-1. **Maneira demorada, offline e precisa de um PenDrive de 32GB (dependendo da versão, claro)**
-  - No site **[olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/)** é disponibilizado algumas imagens de instalação de várias versões do macOS e você vai baixar qualquer versão do macOS Sonoma
-  - Faça o flash usando o **[Balena Etcher](https://etcher.balena.io)** ou **[Rufus](https://rufus.ie/pt_BR/)**(lembrando que pelo balena é bem mais demorado)
-  - Quando finalizado é só configurar a BIOS e iniciar o pelo PenDrive.
+1. **É uma maneira demorada, offline e que requer um PenDrive de 32GB (dependendo da versão, claro).**
+- No site **[olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/)** é disponibilizado algumas imagens de instalação de várias versões do macOS e você vai baixar qualquer versão do macOS Sonoma
+- Faça o flash usando o **[Balena Etcher](https://etcher.balena.io)** ou **[Rufus](https://rufus.ie/pt_BR/)**(lembrando que pelo balena é bem mais demorado)
+- Quando finalizado é só configurar a BIOS e iniciar o pelo PenDrive.
   
-2. **Instalador Oficial, maneira mais fácil, porém, precisa de internet (Esse metódo funciona até o macOS Sonoma)**
-  - Baixe o **[macrecovery](https://github.com/luchina-gabriel/macrecovery)** e descompacte o zipado
-  - Vá nessa [página](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-recovery.html#:~:text=Instructions%20for%20running%20are%20quite%20simple%2C%20choose%20from%20one%20of%20the%20below%20commands%20depending%20on%20which%20OS%20you%20want%20to%20download%3A), procure a versão que deseja, abra o cmd ou terminal dentro da pasta do macrecovery e execute o código
-  - Formate o seu PenDrive em FAT32 e crie a pasta `com.apple.recovery.boot`, mova os arquivos baixados para essa pasta e a EFI para a raiz do PenDrive e pronto, você tem um instalador legacy original em seu PenDrive.
+2. **Instalador Oficial: a maneira mais fácil, mas requer conexão com a internet. (Esse metódo funciona até o macOS Sonoma)**
+- Baixe o **[macrecovery](https://github.com/luchina-gabriel/macrecovery)** e descompacte o zipado
+- Vá nessa [página](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-recovery.html#:~:text=Instructions%20for%20running%20are%20quite%20simple%2C%20choose%20from%20one%20of%20the%20below%20commands%20depending%20on%20which%20OS%20you%20want%20to%20download%3A), procure a versão que deseja, abra o cmd ou terminal dentro da pasta do macrecovery e execute o código
+- Formate o seu PenDrive em FAT32 e crie a pasta `com.apple.recovery.boot`, mova os arquivos baixados para essa pasta e a EFI para a raiz do PenDrive e pronto, você tem um instalador legacy original em seu PenDrive.
 
 >[!NOTE]
 > Se caso você tem tentar baixar a imagem de recuperação pelo macrecovery e o cmd do Windows dizer que o python não estiver instalado, use python ao invés de python3
@@ -85,9 +83,9 @@ Abra o app e clique no 3º icone da direita para esquerda, monte sua EFI que est
 > SMBios que deve ser usada e do `MacBookPro16,2`
 
 ## Observações
-- SecureBootModel foi configurado para `disabled` para evitar problemas com atualização e upgrade de versões de sistema e com isso vem um problema de travar no meio das atualizações e para resolver isso bastar você reiniciar e resetar a NVRAM e tente novamente.
+- `SecureBootModel` foi configurado para `disabled` para evitar problemas com atualização e upgrade de versões de sistema e com isso vem um problema de travar no meio das atualizações e para resolver isso bastar você reiniciar e resetar a NVRAM e tente novamente.
 
-- Antes o `alcid=11`funcionava bem, mas devido atualizações acabou perdendo o suporte a entrada AUX e única id que funciona hoje em dia é a `alcid=100`
+- Antes o `alcid=11`funcionava bem, mas devido atualizações do AppleALC acabou perdendo o suporte a entrada AUX e única id que funciona hoje em dia é a `alcid=100`
 
 ### Q&A
 - Posso usar o meu CPUFriendFriend?

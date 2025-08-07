@@ -1,4 +1,4 @@
-# EFI LI-I3 (Sonoma até agora) 
+# EFI LI-I3 (Ventura, Sonoma, Sequoia e futuramente Tahoe) 
 
 ![only banner](/Images/Banner.png)
 
@@ -18,19 +18,19 @@ Indo direto ao ponto:
 
 ## O que funciona?:
 
-  - *Webcam (Lenovo UVC Camera)*
-  - *Touchpad (ELAN I2C)*
-  - *HDMI (Audio + Video)*
-  - *Brightness Control (F11/F12 Keys)*
-  - *Áudio (mas com alguns problemas, mas sem necessidade de patch's)* 
-  - *Entrada de cartão de memória (não me pergunte como)*
-  - *GPU com aceleração gráfica*
-  - *Gerenciamento de energia da CPU*
-  - *WiFi/Bluetooth Intel AC9560*
-  - *Repouso/Sleep funcionando (mas com um porém)*"
-  - *Boot com Windows 10/11 pelo OpenCore*
-  - *Thermals*
-  - *Sensores*
+- *Webcam (Lenovo UVC Camera)*
+- *Touchpad (ELAN I2C)*
+- *HDMI (Audio + Video)*
+- *Brightness Control (F11/F12 Keys)*
+- *Áudio (mas com alguns problemas, mas sem necessidade de patch's)* 
+- *Entrada de cartão de memória (não me pergunte como)*
+- *GPU com aceleração gráfica*
+- *Gerenciamento de energia da CPU*
+- *WiFi/Bluetooth Intel AC9560*
+- *Repouso/Sleep funcionando (mas com um porém)*"
+- *Boot com Windows 10/11 pelo OpenCore*
+- *Thermals*
+- *Sensores*
  
 ## Sobre o hackin...
 Compensa usar ele em um IdeaPad com I3? não, mas vai do querer de cada um testar. Na minha opnião, o sistema ficou bom e claro que fica melhor ainda se deixar ele parado iniciando as coisas (parece carro velho), mas não entrega aquilo que ele pode como no Windows _(não me refiro ao 11 e sim ao 10)_.
@@ -46,17 +46,17 @@ Enfim, para funcionar o sleep tem que colocar esse comando no seu terminal :)
 > É de extrema importãncia você dar aquele Reset NVRAM depois de aplicar esse comando
 
 ## SSDTs feitas no OP-Core (créditos ao cara)
-  - SSDT-ALS0
-  - SSDT-EC
-  - SSDT-GPI0
-  - SSDT-MCHC
-  - SSDT-PLUG
-  - SSDT-PNLF
-  - SSDT-RTCAWAC
-  - SSDT-SBUS
-  - SSDT-USB-Reset
-  - SSDT-USBX
-  - SSDT-XOSI
+- SSDT-ALS0
+- SSDT-EC
+- SSDT-GPI0
+- SSDT-MCHC
+- SSDT-PLUG
+- SSDT-PNLF
+- SSDT-RTCAWAC
+- SSDT-SBUS
+- SSDT-USB-Reset
+- SSDT-USBX
+- SSDT-XOSI
 
 ## O que deve ser desativado na BIOS?
 - Todas as configs sobre PXE
@@ -66,14 +66,14 @@ Enfim, para funcionar o sleep tem que colocar esse comando no seu terminal :)
 
 # Maneiras de você criar um bootável do macOS:
 1. **Maneira demorada, offline e precisa de um PenDrive de 32GB (dependendo da versão, claro)**
-   - No site **[olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/)** é disponibilizado algumas imagens de instalação de várias versões do macOS e você vai baixar qualquer versão do macOS Sonoma
-   - Faça o flash usando o **[Balena Etcher](https://etcher.balena.io)** ou **[Rufus](https://rufus.ie/pt_BR/)**(lembrando que pelo balena é bem mais demorado)
-   - Quando finalizado é só configurar a BIOS e iniciar o pelo PenDrive.
+  - No site **[olarila.com](https://www.olarila.com/topic/6278-olarila-vanilla-images-macos-installer/)** é disponibilizado algumas imagens de instalação de várias versões do macOS e você vai baixar qualquer versão do macOS Sonoma
+  - Faça o flash usando o **[Balena Etcher](https://etcher.balena.io)** ou **[Rufus](https://rufus.ie/pt_BR/)**(lembrando que pelo balena é bem mais demorado)
+  - Quando finalizado é só configurar a BIOS e iniciar o pelo PenDrive.
   
 2. **Instalador Oficial, maneira mais fácil, porém, precisa de internet (Esse metódo funciona até o macOS Sonoma)**
-   - Baixe o **[macrecovery](https://github.com/luchina-gabriel/macrecovery)** e descompacte o zipado
-   - Vá nessa [página](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-recovery.html#:~:text=Instructions%20for%20running%20are%20quite%20simple%2C%20choose%20from%20one%20of%20the%20below%20commands%20depending%20on%20which%20OS%20you%20want%20to%20download%3A), procure a versão que deseja, abra o cmd ou terminal dentro da pasta do macrecovery e execute o código
-   - Formate o seu PenDrive em FAT32 e crie a pasta `com.apple.recovery.boot`, mova os arquivos baixados para essa pasta e a EFI para a raiz do PenDrive e pronto, você tem um instalador legacy original em seu PenDrive.
+  - Baixe o **[macrecovery](https://github.com/luchina-gabriel/macrecovery)** e descompacte o zipado
+  - Vá nessa [página](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-recovery.html#:~:text=Instructions%20for%20running%20are%20quite%20simple%2C%20choose%20from%20one%20of%20the%20below%20commands%20depending%20on%20which%20OS%20you%20want%20to%20download%3A), procure a versão que deseja, abra o cmd ou terminal dentro da pasta do macrecovery e execute o código
+  - Formate o seu PenDrive em FAT32 e crie a pasta `com.apple.recovery.boot`, mova os arquivos baixados para essa pasta e a EFI para a raiz do PenDrive e pronto, você tem um instalador legacy original em seu PenDrive.
 
 >[!NOTE]
 > Se caso você tem tentar baixar a imagem de recuperação pelo macrecovery e o cmd do Windows dizer que o python não estiver instalado, use python ao invés de python3
@@ -85,7 +85,9 @@ Abra o app e clique no 3º icone da direita para esquerda, monte sua EFI que est
 > SMBios que deve ser usada e do `MacBookPro16,2`
 
 ## Observações
-SecureBootModel foi configurado para `disabled` para evitar problemas com atualização e upgrade de versões de sistema e com isso vem um problema de travar no meio das atualizações e para resolver isso bastar você reiniciar e resetar a NVRAM e tente novamente
+- SecureBootModel foi configurado para `disabled` para evitar problemas com atualização e upgrade de versões de sistema e com isso vem um problema de travar no meio das atualizações e para resolver isso bastar você reiniciar e resetar a NVRAM e tente novamente.
+
+- Antes o `alcid=11`funcionava bem, mas devido atualizações acabou perdendo o suporte a entrada AUX e única id que funciona hoje em dia é a `alcid=100`
 
 ### Q&A
 - Posso usar o meu CPUFriendFriend?
@@ -104,26 +106,26 @@ SecureBootModel foi configurado para `disabled` para evitar problemas com atuali
 > Pelo amor de Deus, não mude a SMBios atoa porque isso vai quebrar as configurações das portas USB
 
 # Agradecimentos ao
-  - [Acidanthera](https://github.com/acidanthera) por [OpenCore](https://github.com/acidanthera#:~:text=of%2047%20repositories-,OpenCorePkg,-Public) e também por:
-    - [AppleALC](https://github.com/acidanthera/AppleALC)
-    - [Whatevergreen](https://github.com/acidanthera/WhateverGreen)
-    - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
-    - [Lilu](https://github.com/acidanthera/Lilu)
-    - [RestrictEvents](https://github.com/acidanthera/RestrictEvents)
-    - [HibernationFixup](https://github.com/acidanthera/HibernationFixup)
-    - [NVMeFix](https://github.com/acidanthera/NVMeFix)
-    - [CpuTscSync](https://github.com/acidanthera/CpuTscSync)
-    - [CPUFriend](https://github.com/acidanthera/CPUFriend)
-    - [VoodooPS2](https://github.com/acidanthera/VoodooPS2)
-    - [MaciASL](https://github.com/acidanthera/MaciASL)
-    - [BrightnessKeys](https://github.com/acidanthera/BrightnessKeys)
-    - [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM)
-  - [OpenIntelWireless](https://github.com/OpenIntelWireless) por [AirportItlwm, Itlwm](https://github.com/OpenIntelWireless/itlwm) e por [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware)
-  - [Corpnewt](https://github.com/corpnewt) por [CPUFriendFriend](https://github.com/corpnewt/CPUFriendFriend) e [USBMap](https://github.com/corpnewt/USBMap)
-  - [Averycblack](https://github.com/averycblack) por [ECEnabler](https://github.com/averycblack/ECEnabler)
-  - [VoodooI2C](https://github.com/VoodooI2C) por [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C)[^1] 
-  - Queridissimo Deus por não ter feito eu desistir e me jogar na frente do caminhão
-  - Ao ChatGPT que ajudou demais com explicações e pesquisas
-  - E ao OP-Core Simplify que ajudou a criar as SSDT
+- [Acidanthera](https://github.com/acidanthera) por [OpenCore](https://github.com/acidanthera#:~:text=of%2047%20repositories-,OpenCorePkg,-Public) e também por:
+  - [AppleALC](https://github.com/acidanthera/AppleALC)
+  - [Whatevergreen](https://github.com/acidanthera/WhateverGreen)
+  - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
+  - [Lilu](https://github.com/acidanthera/Lilu)
+  - [RestrictEvents](https://github.com/acidanthera/RestrictEvents)
+  - [HibernationFixup](https://github.com/acidanthera/HibernationFixup)
+  - [NVMeFix](https://github.com/acidanthera/NVMeFix)
+  - [CpuTscSync](https://github.com/acidanthera/CpuTscSync)
+  - [CPUFriend](https://github.com/acidanthera/CPUFriend)
+  - [VoodooPS2](https://github.com/acidanthera/VoodooPS2)
+  - [MaciASL](https://github.com/acidanthera/MaciASL)
+  - [BrightnessKeys](https://github.com/acidanthera/BrightnessKeys)
+  - [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM)
+- [OpenIntelWireless](https://github.com/OpenIntelWireless) por [AirportItlwm, Itlwm](https://github.com/OpenIntelWireless/itlwm) e por [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware)
+- [Corpnewt](https://github.com/corpnewt) por [CPUFriendFriend](https://github.com/corpnewt/CPUFriendFriend) e [USBMap](https://github.com/corpnewt/USBMap)
+- [Averycblack](https://github.com/averycblack) por [ECEnabler](https://github.com/averycblack/ECEnabler)
+- [VoodooI2C](https://github.com/VoodooI2C) por [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C)[^1] 
+- Queridissimo Deus por não ter feito eu desistir e me jogar na frente do caminhão
+- ChatGPT que ajudou demais com explicações e pesquisas
+- OP-Core Simplify que ajudou a criar as SSDT
 
-  [^1]KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+[^1]: KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK

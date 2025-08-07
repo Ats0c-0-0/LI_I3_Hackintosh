@@ -12,7 +12,8 @@ Indo direto ao ponto:
   - [O que deve ser desativado na BIOS?](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#o-que-deve-ser-desativado-na-bios)
 - [Maneiras de você criar um bootável do macOS:](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#maneiras-de-voc%C3%AA-criar-um-boot%C3%A1vel-do-macos)
   - [Gerando um novo SMBios](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#gerando-um-novo-smbios)
-    - [Observações](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#observa)
+  - [Observações](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#observa%C3%A7%C3%B5es)
+    - [Q&A](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#qa)
 - [Agradecimentos](https://github.com/Ats0c-0-0/Lenovo_Ideapad_3i-15IML05-Hackintosh-EFI?tab=readme-ov-file#agradecimentos-aos)
 
 ## O que funciona?:
